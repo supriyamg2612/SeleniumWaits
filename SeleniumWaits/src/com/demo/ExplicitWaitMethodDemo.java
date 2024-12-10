@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ExplicitWaitMethodDemo {
 	
+	//We apply Explicit Wait for specific element which causes synchronization issue
+	// it uses conditons
+	
 static WebDriver driver = null;
 
 	
@@ -24,7 +27,7 @@ static WebDriver driver = null;
 		
 		driver.manage().window().maximize();
 		
-		WebElement usernameElement = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
+		WebElement usernameElement = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username"))); //use
 		usernameElement.sendKeys("Admin"); 
 		
 		WebElement passwordElement = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.name("password")));
@@ -35,13 +38,8 @@ static WebDriver driver = null;
 		loginButtonElement.click();
 		
 		// in explicit wait identification of webelement is inclusive. it returns webelement directly
-		
-		
-		
-		
-		
-		
 		//driver.findElement(By.name("username")).sendKeys("Admin");   // no need to use findelement method
+		
 	}
 
 }
