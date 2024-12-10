@@ -25,11 +25,21 @@ static WebDriver driver = null;
 		driver.manage().window().maximize();
 		
 		WebElement usernameElement = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
+		usernameElement.sendKeys("Admin"); 
 		
+		WebElement passwordElement = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.name("password")));
+		passwordElement.sendKeys("admin123");
+		
+		WebElement loginButtonElement = mywait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=' Login ']")));
+		
+		loginButtonElement.click();
 		
 		// in explicit wait identification of webelement is inclusive. it returns webelement directly
 		
-		usernameElement.sendKeys("Admin"); 
+		
+		
+		
+		
 		
 		//driver.findElement(By.name("username")).sendKeys("Admin");   // no need to use findelement method
 	}
